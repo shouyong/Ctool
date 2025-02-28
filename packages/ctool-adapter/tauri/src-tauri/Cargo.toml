@@ -6,19 +6,27 @@ authors = ["you"]
 license = ""
 repository = ""
 edition = "2021"
-rust-version = "1.57"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "ctool_adapter_tauri_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
 [build-dependencies]
-tauri-build = { version = "1.7.2", features = ["config-json5"] }
+tauri-build = { version = "2", features = ["config-json5"] }
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.7.2", features = ["api-all", "config-json5", "devtools"] }
+tauri = { version = "2", features = ["config-json5", "devtools"] } 
+tauri-plugin-opener = "2"
 reqwest = { version = "0.11", features = ["blocking"] }
 dirs = "5.0"
+tauri-plugin-shell = "2"
 
 [features]
 # by default Tauri runs in production mode

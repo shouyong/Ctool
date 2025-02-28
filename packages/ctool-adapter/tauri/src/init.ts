@@ -14,7 +14,7 @@ copyCoreDist(tempPath)
 writeFileSync(join(tempPath, 'index.html'), readFileSync(join(__dirname, '../index.html')).toString())
 
 // 清理文件
-const configFilePath = join(__dirname, '../src-tauri/tauri.conf.json5')
+const configFilePath = join(__dirname, '../src-tauri/tauri.conf.json')
 const iconsPath = join(__dirname, '../src-tauri/icons')
 const targetPath = join(__dirname, '../src-tauri/target')
 rmSync(configFilePath, {force: true});
@@ -25,4 +25,4 @@ rmSync(targetPath, {recursive: true, force: true});
 const config = readFileSync(join(__dirname, '../src-tauri/tauri.conf.template.json5')).toString()
     .replace(new RegExp("##version##", 'g'), version())
     .replace(new RegExp("##description##", 'g'), getRootPackageJson()['description']);
-writeFileSync(configFilePath, `// 程序自动生成 => ./tauri.conf.template.json5\n${config}`)
+writeFileSync(configFilePath, `${config}`)

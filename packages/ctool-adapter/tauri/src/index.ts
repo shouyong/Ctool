@@ -24,6 +24,6 @@ export const runtime = new (class implements PlatformRuntime {
 
     // 开发工具操作
     toggleDevTools() {
-        return window['__TAURI__'].invoke('toggle_dev_tools');
+        return window['__TAURI__']['core'].invoke('toggle_dev_tools');
     }
 })

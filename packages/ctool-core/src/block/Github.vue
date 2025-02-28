@@ -21,7 +21,7 @@ let star = $ref(storage.get<number>(CACHE_NAME) || 0)
 
 onMounted(() => {
     if (star === 0) {
-        axios({url: 'https://api.github.com/repos/baiy/Ctool'}).then(({data}) => {
+        axios({url: 'https://api.github.com/repos/shouyong/Ctool'}).then(({data}) => {
             const count = data.stargazers_count ? parseInt(data.stargazers_count) : 0
             if (count > 0) {
                 star = count

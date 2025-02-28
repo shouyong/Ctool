@@ -23,7 +23,7 @@
     "windows": {
       "digestAlgorithm": "sha256"
     },
-    "longDescription": "##description##",
+    "longDescription": "程序开发常用工具 chrome / edge / firefox / utools / windows / linux / mac",
     "targets": [
       "deb",
       "appimage",
@@ -36,7 +36,7 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "ctool",
   "mainBinaryName": "ctool",
-  "version": "##version##",
+  "version": "2.3.1",
   "identifier": "org.baiy.ctool-tauri",
   "plugins": {},
   "app": {
