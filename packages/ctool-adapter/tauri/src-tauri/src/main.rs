@@ -43,12 +43,7 @@ fn toggle_dev_tools(window: tauri::Window) {
 
 #[tauri::command]
 fn ctool_is_use_offline() -> bool {
-    // 强制使用本地离线版本 标示文件 ~/.ctool.tauri_use_local_file.lock
-    if check_file_exists_in_home_dir(".ctool.tauri_use_local_file.lock") {
-        return true;
-    }
-    // 验证`ctool.dev`是否可以访问
-    return !is_url_accessible("https:/ctool.dev/_status.html");
+    return true;
 }
 
 fn main() {
