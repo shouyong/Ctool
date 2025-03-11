@@ -46,7 +46,7 @@ paru -S ctool-bin
 
 ```
 # 安装依赖
-pnpm install
+pnpm install --frozen-lockfile
 
 # 开发调试
 pnpm run dev
