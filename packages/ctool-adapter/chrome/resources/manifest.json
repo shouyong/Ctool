@@ -24,10 +24,7 @@
     "permissions": [
         "clipboardWrite",
         "clipboardRead",
-        "##permissions##",
-        "*://*.baiy.org/*",
-        "*://ctool.dev/*",
-        "*://*.ctool.dev/*"
+        "##permissions##"
     ],
     "commands": {
         "panel": {
